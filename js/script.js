@@ -53,6 +53,9 @@ function printQuote() {
     var color = ["#9EEAB5", "#22557E", "#EF819D", "#EFC381", "#B91C49"];
     console.log(color);
 
+    var randomNum2 = Math.floor(Math.random() * color.length);
+    console.log(color.length);
+
     // Math.floor is like a calculator to round down.
 
     // Math.random selects a random number between 0 and 1, which is why we multiply
@@ -120,19 +123,13 @@ function printQuote() {
     // += means add to the end of//
     //span in line css script (it stays in the same line)//
 
-    // <html>
-    //   <body>
-    //     <body style="color:randomColor;">This is a body</body>
-    //   </body>
-    // </html>;
-
     document.getElementById("quote-box").innerHTML = finalQuote;
 
     console.log(finalQuote);
 
-    document.getElementById("background").style.backgroundColor = finalColors;
+    document.getElementById("background").style.backgroundColor = randomColor;
 
-    console.log(finalColors);
+    console.log(randomColor);
     // initially used data.quotes data pulled in the right order because I had it as a variable - I removed
     // data as variable too simplify.
   }
