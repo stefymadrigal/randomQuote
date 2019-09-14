@@ -14,46 +14,49 @@ function printQuote() {
         quote: "Be yourself; everyone else is already taken.",
         source: "Oscar Wilde",
         citation: "",
-        year: ""
+        year: "",
+        channel: ""
       },
       {
         quote:
           "There is literally no one in the whole world I don't hate right now.",
         source: "Toby Ziegler",
         citation: "The West Wing",
-        year: ""
+        year: "",
+        channel: "NBC"
       },
       {
         quote: "Those who dare fail miserably can achieve greatly.",
         source: "JFK",
         citation: "",
-        year: ""
+        year: "",
+        channel: ""
       },
       {
         quote:
           "Put some alcohol in your mouth to block the words from coming out.",
         source: "Ron Swanson",
         citation: "Parks and Rec",
-        year: ""
+        year: "",
+        channel: "NBC"
       },
       {
         quote: "We should all start to live before we get too old.",
         source: "Marilyn Monroe",
         citation: "",
-        year: 1951
+        year: 1951,
+        channel: ""
       }
     ];
+    var randomNum = Math.floor(Math.random() * 5);
 
-    var color = "#9EEAB5", "#22557E", "#EF819D", "#EFC381", "#B91C49" 
-    //HELP
-
+    var color = ["#9EEAB5", "#22557E", "#EF819D", "#EFC381", "#B91C49"];
+    console.log(color);
 
     // Math.floor is like a calculator to round down.
 
     // Math.random selects a random number between 0 and 1, which is why we multiply
     // by five in this case. Floor rounds it down to the closest integer.
-
-    var randomNum = Math.floor(Math.random() * 5);
 
     console.log(randomNum);
 
@@ -72,6 +75,14 @@ function printQuote() {
     var randomYear = quotes[randomNum].year;
 
     console.log(randomYear);
+
+    var randomChannel = quotes[randomNum].channel;
+
+    console.log(randomChannel);
+
+    var randomColor = color[randomNum];
+
+    console.log(randomColor);
 
     /* write console.log after each so that when testing it I can see and 
     the quote, citation, year, and source in the console */
@@ -98,14 +109,30 @@ function printQuote() {
       finalQuote += "";
     }
 
+    if (randomChannel) {
+      finalQuote += "<span class='year'>" + randomChannel + "</span>";
+    } else {
+      finalQuote += "";
+    }
+
     finalQuote += "</p>";
+
     // += means add to the end of//
     //span in line css script (it stays in the same line)//
+
+    // <html>
+    //   <body>
+    //     <body style="color:randomColor;">This is a body</body>
+    //   </body>
+    // </html>;
 
     document.getElementById("quote-box").innerHTML = finalQuote;
 
     console.log(finalQuote);
 
+    document.getElementById("background").style.backgroundColor = finalColors;
+
+    console.log(finalColors);
     // initially used data.quotes data pulled in the right order because I had it as a variable - I removed
     // data as variable too simplify.
   }
