@@ -8,6 +8,7 @@ function printQuote() {
 
     // var quotes is always constant meaning each section continuously is grouped together
     // so the quote will always have the same source, citation, and year.citation
+    // Added channel as an additional tag
 
     var quotes = [
       {
@@ -53,6 +54,8 @@ function printQuote() {
     var color = ["#9EEAB5", "#22557E", "#EF819D", "#EFC381", "#B91C49"];
     console.log(color);
 
+    // created randomNum2 to make sure the colors are also random and not fixed
+
     var randomNum2 = Math.floor(Math.random() * color.length);
     console.log(color.length);
 
@@ -83,7 +86,7 @@ function printQuote() {
 
     console.log(randomChannel);
 
-    var randomColor = color[randomNum];
+    var randomColor = color[randomNum2];
 
     console.log(randomColor);
 
@@ -118,14 +121,20 @@ function printQuote() {
       finalQuote += "";
     }
 
+    // added additional if/else to accomodate the new tag
     finalQuote += "</p>";
 
     // += means add to the end of//
     //span in line css script (it stays in the same line)//
 
+    setTimeout("window.location.reload();", 30000);
+
     document.getElementById("quote-box").innerHTML = finalQuote;
 
     console.log(finalQuote);
+
+    // added background id in the index and then grabbed it in getElementById - so comment -- found
+    // solution by google change bacground with js: https://www.w3schools.com/jsref/prop_style_background.asp
 
     document.getElementById("background").style.backgroundColor = randomColor;
 
