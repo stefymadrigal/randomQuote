@@ -108,7 +108,7 @@ function printQuote() {
     // added additional if/else to accomodate the new tag
     finalQuote += "</p>";
 
-    setInterval(quotes, 30000);
+    setInterval(printQuote, 30000);
 
     console.log(setInterval);
 
