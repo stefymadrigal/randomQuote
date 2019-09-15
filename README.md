@@ -1,5 +1,3 @@
-# randomQuote
-Unit 1 project - created a random quote generator
 # Treehouse Project 1: Random Quote Generator
 Unit 1 project - created a random quote generator
 
