@@ -2,6 +2,7 @@ document
   .getElementById("loadQuote")
   .addEventListener("click", printQuote, false);
 
+setInterval(printQuote, 30000); //found setInterval code on https://stackoverflow.com/questions/29545496/setting-timer-for-a-javascript-randomizer
 function printQuote() {
   {
     // Entered "" where no data was available to avoid error: prior to refactoring for if/else statement
@@ -107,10 +108,6 @@ function printQuote() {
 
     // added additional if/else to accomodate the new tag
     finalQuote += "</p>";
-
-    setInterval(printQuote, 30000);
-
-    console.log(setInterval);
 
     // += means add to the end of//
     //span in line css script (it stays in the same line)//
