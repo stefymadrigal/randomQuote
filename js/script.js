@@ -52,43 +52,27 @@ function printQuote() {
     var randomNum = Math.floor(Math.random() * 5);
 
     var color = ["#9EEAB5", "#22557E", "#EF819D", "#EFC381", "#B91C49"];
-    console.log(color);
+
+    // generates a random number, assigns it to a variable, then uses it to return a random object from the quotes array
 
     // created randomNum2 to make sure the colors are also random and not fixed
 
     var randomNum2 = Math.floor(Math.random() * color.length);
-    console.log(color.length);
-
-    // Math.floor is like a calculator to round down.
 
     // Math.random selects a random number between 0 and 1, which is why we multiply
     // by five in this case. Floor rounds it down to the closest integer.
 
-    console.log(randomNum);
-
     var randomQuote = quotes[randomNum].quote;
-
-    console.log(randomQuote);
 
     var randomSource = quotes[randomNum].source;
 
-    console.log(randomSource);
-
     var randomCitation = quotes[randomNum].citation;
-
-    console.log(randomCitation);
 
     var randomYear = quotes[randomNum].year;
 
-    console.log(randomYear);
-
     var randomChannel = quotes[randomNum].channel;
 
-    console.log(randomChannel);
-
     var randomColor = color[randomNum2];
-
-    console.log(randomColor);
 
     /* write console.log after each so that when testing it I can see and 
     the quote, citation, year, and source in the console */
@@ -124,21 +108,20 @@ function printQuote() {
     // added additional if/else to accomodate the new tag
     finalQuote += "</p>";
 
+    setInterval(quotes, 30000);
+
+    console.log(setInterval);
+
     // += means add to the end of//
     //span in line css script (it stays in the same line)//
 
-    setTimeout("window.location.reload();", 30000);
-
     document.getElementById("quote-box").innerHTML = finalQuote;
-
-    console.log(finalQuote);
 
     // added background id in the index and then grabbed it in getElementById - so comment -- found
     // solution by google change bacground with js: https://www.w3schools.com/jsref/prop_style_background.asp
 
     document.getElementById("background").style.backgroundColor = randomColor;
 
-    console.log(randomColor);
     // initially used data.quotes data pulled in the right order because I had it as a variable - I removed
     // data as variable too simplify.
   }
